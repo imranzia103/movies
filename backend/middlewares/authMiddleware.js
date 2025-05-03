@@ -40,5 +40,16 @@ if (token) {
     
 });
 
+//check if the usee is admin or not
 
+const authorizeAdmin = (req, res, next) => {
+    if (req.user && req.user.isAdmin) {
+        next();
+    } else {
+        res.status(403).send ( ' Not Authorized as an admin' );
+    }
+    
+}
+    
 
+export { authenticate, authorizeAdmin };
