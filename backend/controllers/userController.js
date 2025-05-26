@@ -12,10 +12,12 @@ import createToken from "../utils/createToken.js";
 const createUser = asyncHandler(async (req, res) => {
   const { username, email, password } = req.body;
 
- if(!username || !email || !password) {
-    res.status(400);
-    throw new Error("Please fill all the fields");
+  console.log(username, email, password);
+  if (!username || !email || !password) {
+    
+    throw new Error("Please fill all fields");
   }
+  
 const userExists = await User.findOne({ email });
   if (userExists) {
     res.status(400);
@@ -45,14 +47,14 @@ const userExists = await User.findOne({ email });
     });
 
  } catch (error) {
-   res.status(500);
+   
    throw new Error(" Invalid User Data...");
  }
 
 });
 
 const loginUser = asyncHandler(async (req, res) => {
-const { email, password } = req.body;
+const {  email, password } = req.body;
 console.log(email, password);
 
   
@@ -60,4 +62,4 @@ console.log(email, password);
 
 
 
-export { createUser, loginUser };
+export { createUser };
