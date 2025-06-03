@@ -7,6 +7,7 @@ import path from "path";
 
 import connectDB from "./config/db.js";
 import userRoutes from "./routes/userRoutes.js";
+
 //config
 
 dotenv.config();
@@ -26,6 +27,7 @@ const PORT = process.env.PORT || 3000;
 //Routes
 
 app.use ("/api/v1/users", userRoutes);
+
 
 
 app.listen(PORT, () => console.log(`Server is Running on port ${PORT}`));

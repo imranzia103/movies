@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "fullstack": "concurrently \"npm run backend\" \"npm run frontend\" \"npm run fullstack\"",
+    "fullstack": "concurrently \"npm run backend\" \"npm run frontend\"",
     "frontend": " cd frontend && npm run dev",
     "backend": "nodemon backend/index.js"
   },
@@ -16,6 +16,7 @@
     "bcryptjs": "^3.0.2",
     "body-parser": "^2.2.0",
     "concurrently": "^9.1.2",
+    "config": "3.3.1",
     "cookie-parser": "^1.4.7",
     "cookies-parser": "^1.2.0",
     "cors": "^2.8.5",
